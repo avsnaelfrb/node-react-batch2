@@ -8,15 +8,122 @@ function introduce(name, gender, job, age) {
     title = "Bu";
   }
 
-  console.log(title + " " + name + " adalah seorang " + job + " yang berusia " + age + " tahun");
+  console.log(
+    title +
+      " " +
+      name +
+      " adalah seorang " +
+      job +
+      " yang berusia " +
+      age +
+      " tahun"
+  );
 }
 
 console.log("=====================================================");
+
 var john = introduce("John", "laki-laki", "penulis", "30");
 console.log(john);
 
-var sarah = introduce("Sarah", "perempuan", "model", "28")
+var sarah = introduce("Sarah", "perempuan", "model", "28");
 console.log(sarah);
 
 // Soal No 2 ------------------------------------------------------------------------------------------
 
+// Soal No 3 ------------------------------------------------------------------------------------------
+
+function findMinMax(arr) {
+  if (arr.length === 0) {
+    return "Array kosong";
+  }
+
+  let terbesar = arr[0];
+  let terkecil = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > terbesar) {
+      terbesar = arr[i];
+    }
+
+    if (arr[i] < terkecil) {
+      terkecil = arr[i];
+    }
+  }
+
+  return `angka terbesar adalah ${terbesar} dan angka terkecil adalah ${terkecil}`;
+}
+
+var angka = [2, 3, 1, 9, 12, 8, 9, 7];
+var hasilMinMax = findMinMax(angka);
+
+console.log("=====================================================");
+console.log(hasilMinMax);
+
+// Soal No 4 ------------------------------------------------------------------------------------------
+
+function arrangeString(str) {
+  return str.split("").sort().join("");
+}
+
+console.log("=====================================================");
+console.log(arrangeString("bahasa"));
+console.log(arrangeString("similikiti"));
+console.log(arrangeString("sanbercode"));
+console.log(arrangeString(""));
+
+// Soal No 5 ------------------------------------------------------------------------------------------
+
+function palindrome(kata) {
+  var reversed = kata.split("").reverse().join("");
+  return kata === reversed;
+}
+
+console.log("=====================================================");
+console.log(palindrome("katak"));
+console.log(palindrome("blanket"));
+console.log(palindrome("nababan"));
+console.log(palindrome("haji ijah"));
+console.log(palindrome("mister"));
+
+// soal No 6 ------------------------------------------------------------------------------------------
+
+function angkaPalindrome(num) {
+  let currentNum = num + 1;
+
+  while (true) {
+    let numStr = String(currentNum);
+    let reversedStr = numStr.split("").reverse().join("");
+
+    if (numStr === reversedStr) {
+      return currentNum;
+    }
+
+    currentNum++;
+  }
+}
+
+console.log("=====================================================");
+console.log(angkaPalindrome(8)); // 9
+console.log(angkaPalindrome(10)); // 11
+console.log(angkaPalindrome(117)); // 121
+console.log(angkaPalindrome(175)); // 181
+console.log(angkaPalindrome(1000)); // 1001
+
+// Soal No 7 ------------------------------------------------------------------------------------------
+
+function cekPermutasi(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  const sortedStr1 = str1.split("").sort().join("");
+  const sortedStr2 = str2.split("").sort().join("");
+
+  return sortedStr1 === sortedStr2;
+}
+
+console.log("=====================================================");
+console.log(cekPermutasi("abah", "baha")); // true
+console.log(cekPermutasi("ondel", "delon")); // true
+console.log(cekPermutasi("paul sernine", "arsene lupin")); // true
+console.log(cekPermutasi("taco", "taca")); // false
