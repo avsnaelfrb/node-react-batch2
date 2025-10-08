@@ -51,6 +51,14 @@ console.log("Hasil subset:", subsets);
 
 // Soal No 4 ------------------------------------------------------------------------------------------
 var numbers = [4, 5, 1, 4, 6, 8, 9, 21];
+var total = 0;
+
+for (var i = 0; i < numbers.length; i++) {
+  total += numbers[i];
+}
+
+console.log("=====================================================");
+console.log("Jumlah total dari semua angka adalah:", total);
 
 // Soal No 5 ------------------------------------------------------------------------------------------
 var kumpulanAngka = [
@@ -58,3 +66,19 @@ var kumpulanAngka = [
   [4, 5, 6, 2, 3, 1],
   [6, 7, 8, 1, 3, 5],
 ];
+
+var hasilPenjumlahan = [];
+
+for (var i = 0; i < kumpulanAngka.length; i++) {
+  var jumlahSubArray = 0;
+
+  for (var j = 0; j < kumpulanAngka[i].length; j++) {
+    jumlahSubArray += kumpulanAngka[i][j];
+  }
+
+  hasilPenjumlahan.push(jumlahSubArray);
+}
+
+console.log("=====================================================");
+console.log("Array asli:", kumpulanAngka);
+console.log("Hasil penjumlahan per sub-array:", hasilPenjumlahan);
