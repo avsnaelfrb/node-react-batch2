@@ -82,3 +82,5 @@ for (var i = 0; i < kumpulanAngka.length; i++) {
 console.log("=====================================================");
 console.log("Array asli:", kumpulanAngka);
 console.log("Hasil penjumlahan per sub-array:", hasilPenjumlahan);
+
+console.log("=====================================================");
