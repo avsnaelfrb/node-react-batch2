@@ -27,3 +27,4 @@ var cekKTP = (umur >= 17) ? "boleh buat KTP" : "belum boleh buat KTP"
 console.log(cekKTP)
 
 console.log("=====================================================")
+
