@@ -52,13 +52,32 @@ console.log("=====================================================");
 // Soal No 4 ------------------------------------------------------------------------------------------
 var tinggi = 7;
 for (var i = 1; i <= tinggi; i++) {
-    var baris = "";
-    for (var j = 1; j <= i; j++) {
-        baris += "#";
-    }
-    console.log(baris);
+  var baris = "";
+  for (var j = 1; j <= i; j++) {
+    baris += "#";
+  }
+  console.log(baris);
 }
 
 console.log("=====================================================");
 
 // Soal No 5 ------------------------------------------------------------------------------------------
+
+var sentence = "Fullstack Developer";
+
+var consonants = "";
+
+var vowels = "aeiou";
+
+for (var i = 0; i < sentence.length; i++) {
+  var currentChar = sentence[i];
+  var lowerCaseChar = currentChar.toLowerCase();
+
+  if (!vowels.includes(lowerCaseChar) && currentChar !== " ") {
+    consonants += currentChar;
+  }
+}
+
+console.log("Kalimat asli:", sentence);
+console.log("Huruf konsonan saja:", consonants);
+console.log("=====================================================");
