@@ -6,7 +6,6 @@ if (minimarketStatus == "open") {
 } else {
     console.log("minimarketnya tutup")
 }
-
 console.log("=====================================================")
 
 var minuteRemainingToOpen = 4 
@@ -18,13 +17,16 @@ if (minimarketStatus != "open") {
 } else {
     console.log("minimarketnya tutup, saya pulang lagi")
 }
-
 console.log("=====================================================")
 
 var umur = 15
 
 var cekKTP = (umur >= 17) ? "boleh buat KTP" : "belum boleh buat KTP"
 console.log(cekKTP)
-
 console.log("=====================================================")
 
+var kata = "javascript"
+
+
+console.log(kata)
+console.log("=====================================================")
