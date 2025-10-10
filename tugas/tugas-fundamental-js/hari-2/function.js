@@ -159,7 +159,7 @@ function cekPermutasi(str1, str2) {
 }
 
 console.log("=====================================================");
-console.log(cekPermutasi("abah", "baha")); // true
-console.log(cekPermutasi("ondel", "delon")); // true
-console.log(cekPermutasi("paul sernine", "arsene lupin")); // true
-console.log(cekPermutasi("taco", "taca")); // false
+console.log(cekPermutasi("abah", "baha"));
+console.log(cekPermutasi("ondel", "delon")); 
+console.log(cekPermutasi("paul sernine", "arsene lupin")); 
+console.log(cekPermutasi("taco", "taca")); 
