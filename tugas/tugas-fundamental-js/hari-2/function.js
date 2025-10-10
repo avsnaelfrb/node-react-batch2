@@ -30,6 +30,42 @@ console.log(sarah);
 
 // Soal No 2 ------------------------------------------------------------------------------------------
 
+function cariKarakterUnik(teks) {
+  const teksKecil = teks.toLowerCase();
+
+  const hitungan = {};
+
+  for (let i = 0; i < teksKecil.length; i++) {
+    const karakter = teksKecil[i];
+
+    if (karakter === " ") {
+      continue;
+    }
+
+    if (hitungan[karakter]) {
+      hitungan[karakter]++;
+    } else {
+      hitungan[karakter] = 1;
+    }
+  }
+
+  let hasil = "";
+
+  for (const karakter in hitungan) {
+    if (hitungan[karakter] === 1) {
+      hasil += karakter;
+    }
+  }
+
+  return hasil;
+}
+
+var text = "Super Bootcamp Fullstack Dev 2022";
+
+console.log("=====================================================");
+const unik = cariKarakterUnik(text);
+console.log(unik);
+
 // Soal No 3 ------------------------------------------------------------------------------------------
 
 function findMinMax(arr) {
