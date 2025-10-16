@@ -21,3 +21,10 @@ model movies {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }
+
+model kategori {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
