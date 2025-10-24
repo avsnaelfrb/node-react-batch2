@@ -15,16 +15,20 @@ datasource db {
 }
 
 model movies {
-  id        Int      @id @default(autoincrement())
-  title     String 
-  year      Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  id             Int      @id @default(autoincrement())
+  title          String 
+  year           Int
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @default(now())
+  category       Category?  @relation(fields: [categoryId], references: [id])
+  categoryId     Int?
 }
 
-model kategori {
-  id        Int      @id @default(autoincrement())
-  name      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+
+model Category{
+  id             Int       @id @default(autoincrement())
+  name           String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  movies         movies[]
 }
