@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum SlotStatus {
+  OPEN
+  CLOSED
+  FULL
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  CANCELED
+  COMPLETED
+}
+
+model User {
+  id        Int        @id   @default(autoincrement())
+  name      String    
+  email     String     @unique
+  password  String     
+  role      Role?       @default(USER)
+  preOrders PreOrder[] 
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Category {
+  id        Int       @id   @default(autoincrement())
+  name      String    @unique
+  products   Product[]   
+}
+
+model Product {
+  id        Int       @id   @default(autoincrement())
+  name      String
+  price     Int
+  description   String?
+  imageUrl      String?
+  category      Category?    @relation(fields: [categoryId], references: [id])
+  categoryId    Int?
+  slots         PreOrderSlot[]
+}
+
+model PreOrderSlot {
+  id           Int             @id @default(autoincrement())
+  product      Product         @relation(fields: [productId], references: [id])
+  productId    Int             
+  deliveryDate DateTime        
+  status       SlotStatus      @default(OPEN) 
+  maxQuantity  Int             
+  soldQuantity Int             @default(0) 
+  orderItems   PreOrderItem[]  
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+}
+
+// Model Pesanan (Pre-Order) dari Customer
+model PreOrder {
+  id           Int             @id @default(autoincrement())
+  customer     User            @relation(fields: [customerId], references: [id])
+  customerId   Int
+  totalPrice   Int             
+  status       OrderStatus     @default(PENDING)
+  items        PreOrderItem[]  
+  createdAt    DateTime        @default(now())
+}
+
+model PreOrderItem {
+  id        Int          @id @default(autoincrement())
+  order     PreOrder     @relation(fields: [orderId], references: [id])
+  orderId   Int          
+  slot      PreOrderSlot @relation(fields: [slotId], references: [id])
+  slotId    Int          
+  quantity  Int          
+  price     Int          
+}
