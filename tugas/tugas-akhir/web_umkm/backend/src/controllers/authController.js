@@ -17,7 +17,6 @@ export const register = async (req, res) => {
       },
     });
     
-
     if (userExist) {
       return res.status(401).json({ message: "Email sudah terdaftar" });
     } else {
@@ -37,10 +36,30 @@ export const register = async (req, res) => {
   }
 };
 
-const generateToken = () => {
-  return jwt.sign({ id: newUser.id }, process.env.JWT_SECRET, {
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: "30d",
   });
 };
 
+export const login = async(req, res) => {
+    const { email, password } = req.body
+
+    try {
+        const user = await prisma.user.findUnique({ where : {email} })
+        const comparePassword = await bcrypt.compare(password, user.password)
+        if (user && comparePassword) {
+            res.status(201).json({ message: "berhasil login", data: {
+                name : user.name,
+                email,
+                role: user.role,
+                token : generateToken(user.id)
+            } })
+        } else {
+            res.status(401).json({  message: "email atau sandi salah" })
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
 
