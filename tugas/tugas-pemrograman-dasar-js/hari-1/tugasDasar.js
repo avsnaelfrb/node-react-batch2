@@ -124,3 +124,4 @@ luasLingkaran = 22/7 * parseFloat(jariJari)
 console.log(luasPersegi)
 console.log(luasLingkaran)
 console.log("====================================================================================")
+
