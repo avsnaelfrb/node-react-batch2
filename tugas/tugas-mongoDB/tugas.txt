@@ -1,0 +1,59 @@
+1. Buat Database :
+
+use myshop;
+
+=======================================================================
+
+2. Membuat collection dan Memasukkan Data :
+
+// Perintah untuk collection 'users'
+db.users.insertMany([
+  { name: "John Doe", email: "john@doe.com", password: "john123" },
+  { name: "Jane Doe", email: "jane@doe.com", password: "jenita123" }
+]);
+
+// Perintah untuk collection 'categories'
+db.categories.insertMany([
+  { name: "gadget" },
+  { name: "cloth" },
+  { name: "men" },
+  { name: "women" },
+  { name: "branded" }
+]);
+
+// Perintah untuk collection 'items'
+db.items.insertMany([
+  { name: "Sumsang b50", description: "hape keren dari merek sumsang", price: 4000000, stock: 100 },
+  { name: "Uniklooh", description: "baju keren dari brand ternama", price: 500000, stock: 50 },
+  { name: "IMHO Watch", description: "jam tangan anak yang jujur banget", price: 2000000, stock: 10 }
+]);
+
+=======================================================================
+
+3. Mengambil Data dari Database :
+
+// 3.1 Mengambil data seluruh user KECUALI password
+db.users.find({}, { password: 0 });
+
+// 3.2 Mengambil data items (harga > 1000000)
+db.items.find({ price: { $gt: 1000000 } });
+
+// 3.2 Mengambil data items (mirip kata kunci "sang")
+// (Anda bisa ganti /sang/i dengan /uniklo/i atau /watch/i)
+db.items.find({ name: { $regex: /sang/i } });
+
+=======================================================================
+
+4. Mengubah data dari Database :
+
+// Mengubah harga 'Sumsang b50'
+db.items.updateOne(
+  { name: "Sumsang b50" },
+  { $set: { price: 2500000 } }
+);
+
+=======================================================================
+
+ git add . 
+ git commit -m "tugas mongodb selesai" 
+ git push
