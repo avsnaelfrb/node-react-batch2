@@ -84,3 +84,4 @@ console.log("Array asli:", kumpulanAngka);
 console.log("Hasil penjumlahan per sub-array:", hasilPenjumlahan);
 
 console.log("=====================================================");
+

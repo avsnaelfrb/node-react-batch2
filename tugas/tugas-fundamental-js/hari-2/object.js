@@ -72,3 +72,43 @@ people.forEach((orang) => {
 console.log("total umur: " + totalUmur);
 let rataRataUmur = people.age > 0 ? totalUmur / people.length : 0;
 console.log("Rata-rata umur adalah:", rataRataUmur);
+
+//soal no 5 --------------------------------------------------------------------------------------
+console.log("SOAL NO 5");
+console.log("=====================================================");
+
+var people = [
+  { name: "John", job: "Programmer", gender: "male", age: 30 },
+  { name: "Sarah", job: "Model", gender: "female", age: 27 },
+  { name: "Jack", job: "Engineer", gender: "male", age: 25 },
+  { name: "Ellie", job: "Designer", gender: "female", age: 35 },
+  { name: "Danny", job: "Footballer", gender: "male", age: 30 },
+];
+
+people.sort((a, b) => a.age - b.age);
+
+console.log("Hasil pengurutan berdasarkan umur:");
+people.forEach((person, index) => {
+  console.log(`${index + 1}. ${person.name}`);
+});
+
+//soal no 6 --------------------------------------------------------------------------------------
+console.log("SOAL NO 6");
+console.log("=====================================================");
+
+var phone = {
+  name: "Samsung Galaxy Note 20",
+  brand: "Samsung",
+  colors: ["Black"],
+  release: 2020,
+};
+
+function addColors(newColor) {
+  phone.colors.push(newColor);
+}
+
+addColors("Gold");
+addColors("Silver");
+addColors("Brown");
+
+console.log(phone);

@@ -163,3 +163,5 @@ console.log(cekPermutasi("abah", "baha"));
 console.log(cekPermutasi("ondel", "delon")); 
 console.log(cekPermutasi("paul sernine", "arsene lupin")); 
 console.log(cekPermutasi("taco", "taca")); 
+
+

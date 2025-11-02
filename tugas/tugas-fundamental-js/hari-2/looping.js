@@ -81,3 +81,4 @@ for (var i = 0; i < sentence.length; i++) {
 console.log("Kalimat asli:", sentence);
 console.log("Huruf konsonan saja:", consonants);
 console.log("=====================================================");
+
