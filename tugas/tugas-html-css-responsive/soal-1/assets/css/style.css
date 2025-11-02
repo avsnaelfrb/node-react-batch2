@@ -1,0 +1,246 @@
+/*
+ * ===================================================
+ * GLOBAL STYLES (Berlaku di semua halaman)
+ * ===================================================
+ */
+
+/* Reset CSS dasar dan set font utama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Konsistensi layout */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Font dari Google Fonts */
+    background-color: #fff;
+    color: #203239; /* Warna hitam kustom sesuai permintaan */
+    line-height: 1.6;
+}
+
+/* Container utama untuk membungkus konten di tengah halaman
+  (Sesuai video, layout tidak full-width)
+*/
+#container,
+.container-history { /* .container-history dari riwayat-pribadi.html */
+    max-width: 1000px; /* Lebar maksimum konten */
+    margin: 20px auto; /* Memberi jarak atas/bawah dan otomatis center kiri/kanan */
+    padding: 20px;
+}
+
+a {
+    color: #203239; /* Warna link sama dengan teks */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+}
+
+ul {
+    list-style: none; /* Menghilangkan bullet points */
+}
+
+img {
+    max-width: 100%; /* Membuat gambar responsif */
+    height: auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* * ===================================================
+ * HEADER (Navigasi)
+ * ===================================================
+ */
+.header {
+    display: flex; /* Menggunakan Flexbox */
+    justify-content: space-between; /* Logo di kiri, nav di kanan */
+    align-items: center; /* Menyelaraskan item secara vertikal di tengah */
+    
+    /* Beri padding dan batas agar terpisah dari konten */
+    padding: 20px 40px; 
+    border-bottom: 1px solid #f0f0f0; /* Garis bawah tipis */
+    
+    /* Kita buat header sedikit lebih lebar dari konten utama */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header nav ul {
+    display: flex; /* Menu navigasi dibuat horizontal */
+}
+
+.header nav li {
+    margin-left: 35px; /* Jarak antar item menu */
+}
+
+.header nav a {
+    font-weight: 500; /* Sedikit tebal */
+    font-size: 16px;
+}
+
+.header nav a:hover {
+    text-decoration: underline; /* Efek hover sederhana */
+}
+
+
+/* * ===================================================
+ * MAIN CONTENT (Area Konten Utama)
+ * ===================================================
+ */
+.main {
+    padding: 20px 0; /* Beri jarak antara header dan footer */
+}
+
+
+/* * ===================================================
+ * HALAMAN BERANDA (index.html)
+ * ===================================================
+ */
+
+/* --- Bagian Hero (Headline & Gambar) --- */
+.container_hero {
+    display: flex;
+    align-items: center; /* Konten di tengah secara vertikal */
+    justify-content: space-between; /* Teks di kiri, gambar di kanan */
+    gap: 40px; /* Jarak antara teks dan gambar */
+    margin-bottom: 50px;
+    padding: 20px 0;
+}
+
+.container_hero-image {
+    flex-basis: 40%; /* Lebar gambar 40% dari container_hero */
+    min-width: 300px;
+}
+
+.container_hero-headline {
+    flex-basis: 55%; /* Lebar teks 55% dari container_hero */
+}
+
+.container_hero-headline h1 {
+    font-size: 2.4em; /* Ukuran h1 lebih besar */
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.container_hero-headline small {
+    font-size: 16px;
+    color: #555; /* Warna teks "Kunjungi saya" */
+    margin-bottom: 10px;
+    display: block; /* Agar margin bottom berfungsi */
+}
+
+.container_hero-headline ul {
+    display: flex; /* Ikon sosial media horizontal */
+    margin-top: 10px;
+}
+
+.container_hero-headline ul li {
+    margin-right: 20px; /* Jarak antar ikon */
+}
+
+.container_hero-headline ul i {
+    font-size: 24px; /* Ukuran ikon (Gitlab, Instagram, etc.) */
+}
+
+/* --- Bagian Describe (Jempol & Kartu Teks) --- */
+.container_describe {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Sesuai video */
+    gap: 40px;
+    background-color: #fdfdfd; /* Latar belakang sedikit off-white */
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+
+.container_describe-animation {
+    flex-basis: 30%;
+    text-align: center;
+}
+
+.container_describe-animation i {
+    font-size: 150px; /* Ikon jempol besar */
+    color: #203239;
+}
+
+.container_describe-info {
+    flex-basis: 65%;
+}
+
+.container_describe-info__card {
+    border: 2px solid #203239; /* Border solid sesuai video */
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.container_describe-info__card p {
+    font-size: 15px;
+    color: #333;
+}
+
+
+/* * ===================================================
+ * HALAMAN RIWAYAT PRIBADI (riwayat-pribadi.html)
+ * ===================================================
+ */
+
+.container-history__motto {
+    text-align: center;
+    font-style: italic; /* Teks miring */
+    font-size: 1.2em; /* Sedikit lebih besar */
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.container-history__motto p {
+    margin: 5px 0; /* Memberi jarak antar baris motto */
+}
+
+.container-history__table h1 {
+    font-size: 1.8em;
+    color: #203239;
+    border-bottom: 2px solid #f0f0f0; /* Garis bawah h1 */
+    padding-bottom: 10px;
+}
+
+/* Styling untuk kedua tabel */
+.container-history__table table {
+    width: 100%; /* Lebar tabel penuh */
+    border-collapse: collapse; /* Menyatukan border */
+    margin: 20px 0 30px 0; /* Jarak atas/bawah tabel */
+}
+
+.container-history__table th,
+.container-history__table td {
+    border: 1px solid #203239; /* Border solid hitam sesuai video */
+    padding: 12px 15px; /* Padding di dalam sel */
+    text-align: left;
+}
+
+/* Header Tabel (Nama, Jenjang, dll) */
+.container-history__table th {
+    background-color: #f4f4f4; /* Latar header abu-abu */
+    font-weight: 600;
+}
+
+/* Khusus tabel data diri, kolom pertama bold */
+.table-data-diri td:first-child {
+    font-weight: bold;
+    width: 30%; /* Beri lebar tetap untuk kolom label (Nama, Alamat, dll) */
+}
+
+
+/* * ===================================================
+ * FOOTER
+ * ===================================================
+ */
+.footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    color: #555;
+    font-size: 14px;
+    border-top: 1px solid #f0f0f0;
+}
