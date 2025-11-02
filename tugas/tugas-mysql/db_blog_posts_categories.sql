@@ -1,8 +1,6 @@
-CREATE DATABASE  IF NOT EXISTS `db_review_movie` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_review_movie`;
 -- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
--- Host: localhost    Database: db_review_movie
+-- Host: localhost    Database: db_blog_posts
 -- ------------------------------------------------------
 -- Server version	8.0.42
 
@@ -18,28 +16,27 @@ USE `db_review_movie`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `review`
+-- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `review`;
+DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `review` (
-  `id_review` int NOT NULL,
-  `rating` varchar(45) DEFAULT NULL,
-  `critics` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id_review`),
-  UNIQUE KEY `id_review_UNIQUE` (`id_review`)
+CREATE TABLE `categories` (
+  `id_categori` int NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_categori`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `review`
+-- Dumping data for table `categories`
 --
 
-LOCK TABLES `review` WRITE;
-/*!40000 ALTER TABLE `review` DISABLE KEYS */;
-/*!40000 ALTER TABLE `review` ENABLE KEYS */;
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Basic'),(2,'Library'),(3,'Unknow'),(4,'Sport');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-13 14:09:49
+-- Dump completed on 2025-11-02 16:34:43
