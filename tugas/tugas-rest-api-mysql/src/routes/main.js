@@ -15,3 +15,4 @@ router.put("/nilai/:id", updateNilai);
 router.delete("/nilai/:id", deleteNilai);
 
 module.exports = router;
+

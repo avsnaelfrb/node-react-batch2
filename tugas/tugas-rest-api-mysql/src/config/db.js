@@ -18,3 +18,4 @@ connectionPool.getConnection(function (err) {
 });
 
 module.exports = { connectionPool };
+
