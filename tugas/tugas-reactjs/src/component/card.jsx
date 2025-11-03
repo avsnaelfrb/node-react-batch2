@@ -1,12 +1,14 @@
 import "../style/card.css";
 import mainLogo from '../assets/logo.png'
 import Todolist from "./todolist";
+import TimerCountdown from "./timer.jsx";
 
 export default function MainCard() {
   return (
     <>
       <div className="card">
         {/* <!-- Header: Logo Sanbercode --> */}
+        <TimerCountdown/>
         <div className="header">
           <span className="logo-placeholder">
             <img src={mainLogo} alt="test" />
